@@ -2,19 +2,19 @@ package com.epam.rd.autocode.startegy.cards;
 
 public class CardDealingStrategies {
     public static CardDealingStrategy texasHoldemCardDealingStrategy() {
-        throw new UnsupportedOperationException();
+        return new TexasHoldemCardDealingStrategyImplementation();
     }
 
     public static CardDealingStrategy classicPokerCardDealingStrategy() {
-        throw new UnsupportedOperationException();
+        return new ClassicPokerCardDealingStrategyImplementation();
     }
 
     public static CardDealingStrategy bridgeCardDealingStrategy(){
-        throw new UnsupportedOperationException();
+        return new BridgeCardDealingStrategyImplementation();
     }
 
     public static CardDealingStrategy foolCardDealingStrategy(){
-        throw new UnsupportedOperationException();
+        return new FoolCardDealingStrategyImplementation();
     }
 
 }
