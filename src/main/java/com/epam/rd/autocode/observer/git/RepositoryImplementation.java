@@ -5,8 +5,10 @@ import java.util.List;
 
 public class RepositoryImplementation implements Repository{
     private List<WebHook> webHookList;
+    private List<Commit> commits;
     public RepositoryImplementation() {
         webHookList = new ArrayList<>();
+        commits = new ArrayList<>();
     }
     @Override
     public void addWebHook(WebHook webHook) {
@@ -16,7 +18,8 @@ public class RepositoryImplementation implements Repository{
     @Override
     public Commit commit(String branch, String author, String[] changes) {
         Commit commit = new Commit(author, changes);
-        Event event = new Event(Event.Type.COMMIT, branch, List.of(commit));
+        commits.add(commit);
+        Event event = new Event(Event.Type.COMMIT, branch, commits);
         updateObserversAboutEvent(event);
         return commit;
     }

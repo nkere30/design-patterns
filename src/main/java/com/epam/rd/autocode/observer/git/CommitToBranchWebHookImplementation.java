@@ -28,7 +28,7 @@ public class CommitToBranchWebHookImplementation implements WebHook{
 
     @Override
     public void onEvent(Event event) {
-        if (event.type().equals(Event.Type.COMMIT) && (event.branch().equals(branchName))) {
+        if (event.type() == Event.Type.COMMIT && (event.branch().equals(branchName))) {
             eventList.add(event);
         }
     }
