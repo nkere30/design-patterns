@@ -28,7 +28,7 @@ public class MergeToBranchWebHookImplementation implements WebHook{
 
     @Override
     public void onEvent(Event event) {
-        if (event.type() == Event.Type.MERGE && event.branch().equals(branchName)) {
+        if (event.type().equals(Event.Type.MERGE) && event.branch().equals(branchName)) {
             eventList.add(event);
         }
     }
